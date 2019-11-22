@@ -1,0 +1,8 @@
+.widen {
+  width: 90%;
+}
+@media (max-width: 700px) {
+  .widen {
+    width: 100%;
+  }
+}

@@ -1,0 +1,5 @@
+@media (max-width: 575px) {
+  .smol-hid {
+    display: none;
+  }
+}

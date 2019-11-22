@@ -1,52 +1,54 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import Header from "./Header"
+import "./Layout.css"
+import { Form, Dropdown, Button } from "react-bootstrap"
+import Footer from "./Footer"
 
-import Header from "./header"
-import "./layout.css"
+export default ({ children }) => (
+  <div>
+    <div className="landing-container">
+      <Header />
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+      <div className="p-md-5 p-2 spacer mx-auto">
+        <div className="container my-5">
+          <h1 className="text-white font-weight-light my-auto text-center m-auto">
+            Find your next Working Desk,
+          </h1>
+          <h1 className="text-white font-weight-light my-auto text-center m-auto">
+            Private Office or Event Space
+          </h1>
+        </div>
+        <div className="w-100 d-flex flex-wrap justify-content-between">
+          <Form.Control
+            type="text"
+            placeholder="&#128269; Find a space"
+            className="rounded-0 mx-sm-2 vw-50 mq"
+          />
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+          <Dropdown>
+            <Dropdown.Toggle
+              variant="light"
+              className="rounded-0 flex-fill mx-sm-2 vw-75"
+            >
+              Space type
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="#action/">Working Desk</Dropdown.Item>
+              <Dropdown.Item href="#action/">Meeting Room</Dropdown.Item>
+              <Dropdown.Item href="#action/">Conference Room</Dropdown.Item>
+              <Dropdown.Item href="#action/">Private Office</Dropdown.Item>
+              <Dropdown.Item href="#action/">Corporate Dining</Dropdown.Item>
+              <Dropdown.Item href="#action/">Event Space</Dropdown.Item>
+              <Dropdown.Item href="#action/">Virtual Office</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          <Button variant="danger" className="rounded-0 flex-fill mx-sm-2 ">
+            Search
+          </Button>
+        </div>
       </div>
-    </>
-  )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout
+    </div>
+    <div>{children}</div>
+    <Footer />
+  </div>
+)
