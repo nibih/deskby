@@ -1,5 +1,5 @@
 import React from "react"
-import "./Footer.css"
+import "./Footer.module.css"
 import { Nav, Dropdown } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {

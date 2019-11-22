@@ -1,6 +1,6 @@
 import React from "react"
 import Header from "./Header"
-import "./Layout.css"
+import "./Layout.module.css"
 import { Form, Dropdown, Button } from "react-bootstrap"
 import Footer from "./Footer"
 

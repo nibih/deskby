@@ -1,7 +1,7 @@
 import React from "react"
 import Head from "../images/head.jpg"
 import { Button } from "react-bootstrap"
-import "./Contact.css"
+import "./Contact.module.css"
 export default () => (
   <div className="p-0 row m-0 bg-light" id="contact-us">
     <div className="col-sm-6 p-0 smol-hid">

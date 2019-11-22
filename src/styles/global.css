@@ -7,14 +7,9 @@
   background-blend-mode: darken;
   height: auto;
 }
-
 .spacer {
   width: 100vw;
   height: 70vh;
-}
-h1 {
-  font-size: 250%;
-  width: 90%;
 }
 @media (min-width: 768px) {
   .mq {
